@@ -1,2 +1,2 @@
-# SerreLabExercises
-Exercises for my onboarding to the Serre Lab.
+# SerreLabWork
+My work for the Serre Lab.
