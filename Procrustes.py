@@ -21,7 +21,7 @@ class ProcrustesDistance(Module):
             Y = Y - Y_mean
         norm_X = torch.linalg.norm(X)**2
         norm_Y = torch.linalg.norm(Y)**2
-        M = X.T @ Y
-        s = torch.linalg.svdvals(M).sum()
+        M = Y.T @ X # Y.T @ X # We want Y.T @ X, but only Y @ X.T can work
+        s = torch.linalg.svd(M, full_matrices=False)[1].sum()
         d = norm_X + norm_Y - 2.0 * s
         return torch.sqrt(d)
